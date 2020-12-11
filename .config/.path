@@ -1,0 +1,91 @@
+#### bashrc path variables 
+
+umask 0034
+HOMEHOMEBREW_PATH_PATH="/media/jerome/AS/Softwares/HomeBrew"
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+#PATH=$PATH:/usr/sbin/
+
+[ -d  $HOMEBREW_PATH/.linuxbrew/etc/bash_completion.d ] && .  $HOMEBREW_PATH/.linuxbrew/etc/bash_completion.d/*
+#[ -r  $HOME/.local/etc/bash_completion.d/* ] 
+. /$HOME/.local/etc/bash_completion.d/* 
+
+[ -r $HOME/.local/share/bash-completion/* ] && . /$HOME/.local/share/bash-completion/*
+[ -d ~/.local/share/man ] && export MANPATH="$HOME/.local/share/man${MANPATH+:$MANPATH}:"
+#export INFOPATH="$HOME/.local/share/info:${INFOPATH:-}";
+
+
+
+[ -f /etc/bash_completion ] && source /etc/bash_completion
+
+#export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11R6/bin:/usr/local/bin:/home/v$
+#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/bin:/usr/local/bin:/bin:/usr/sbin:/bin:/usr/local/bin
+
+
+
+
+
+[[ -f ~/.dir_colors   ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
+[[ -f /etc/DIR_COLORS ]] && match_lhs="${match_lhs}$(</etc/DIR_COLORS)"
+[[ -z ${match_lhs}    ]] \
+	&& type -P dircolors >/dev/null \
+	&& match_lhs=$(dircolors --print-database)
+[[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
+
+
+[ -d "$HOME/.bin" ] &&  PATH="~/.bin:$PATH"
+
+
+[[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
+	
+[ -d ~/my\ scripts/ ] && PATH=$PATH:~/my\ scripts/ 
+[ -d ~/scripttest ] && PATH=$PATH:~/scripttest/
+[ -d ~/scripttest ] && PATH=$PATH:~/.local/bin/
+
+#PATH=$PATH$( find $home/.local/node_modules -type d -printf ":%p" )
+
+
+
+#[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+#export CPATH=$CPATH:/usr/include/********
+#export CPATH=$CPATH:/usr/lib/********
+
+#export http_proxy=socks5://127.0.0.1:9050 http_proxy=socks5://127.0.0.1:9050
+#export https_proxy=socks5://127.0.0.1:9050 https_proxy=socks5://127.0.0.1:9050
+# ld_library_PATH=/usr/local/lib64 ./cart5
+
+## brew
+#eval `$HOMEBREW_PATH/.linuxbrew/bin/brew shellenv`
+
+
+
+if [ -d "/media/jerome/AS/Softwares/HomeBrew/" ] ;
+then
+    export HOMEHOMEBREW_PATH_PREFIX="/media/jerome/AS/Softwares/HomeBrew/";
+    export HOMEHOMEBREW_PATH_CELLAR="/media/jerome/AS/Softwares/HomeBrew/cellar";
+    export HOMEHOMEBREW_PATH_REPOSITORY="/media/jerome/AS/Softwares/HomeBrew/HOMEHOMEBREW_PATH";
+    export PATH="/media/jerome/AS/Softwares/HomeBrew/bin:/media/jerome/AS/Softwares/HomeBrew/sbin${PATH+:$PATH}";
+    export MANPATH="/media/jerome/AS/Softwares/HomeBrew/share/man${manPATH+:$manPATH}:";
+    export INFOPATH="/media/jerome/AS/Softwares/HomeBrew/share/info:${infoPATH:-}";
+fi
+[ ! -z /opt/metasploit-framework  ]  && export PATH=$PATH:/opt/metasploit-framework/bin
+
+#if [ -d "/opt/brew" ] ;
+#then
+#export HOMEHOMEBREW_PATH_PREFIX="/opt/brew/";
+#export HOMEHOMEBREW_PATH_CELLAR="/opt/brew/cellar/";
+#export HOMEHOMEBREW_PATH_REPOSITORY="/opt/brew/HOMEHOMEBREW_PATH";
+#export PATH="/opt/brew/bin:/opt/brew/sbin${PATH+:$PATH}";
+#export MANPATH="/opt/brew/share/man${manPATH+:$manPATH}:";
+#export INFOPATH="/opt/brew/share/info:${infoPATH:-}";
+#fi
+#
+##[ -d ~/.config/apk-runner ] &&   export android_home="$home/.config/apk-runner"
+### apt local
+##export PATH=$PATH:$HOMEBREW_PATH/xxx/git/usr/bin
+##export CPATH=$CPATH:$HOMEBREW_PATH/xxx/git/include
+##export library_PATH=$library_PATH:$HOMEBREW_PATH/xxx/git/lib
+##export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOMEBREW_PATH/xxx/git/usr/lib
+##export PATH=$PATH:/media/jerome/VG/a/chromium/depot_tools
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/media/jerome/AS/Softwares/android-studio/emulator:/media/jerome/AS/Softwares/android-studio/emulator/lib:/media/jerome/AS/Softwares/android-studio/emulator/lib/pc-bios:/media/jerome/AS/Softwares/android-studio/emulator/lib/pc-bios/keymaps:/media/jerome/AS/Softwares/android-studio/emulator/lib64:/media/jerome/AS/Softwares/android-studio/emulator/lib64/qt:/media/jerome/AS/Softwares/android-studio/emulator/lib64/qt/lib:/media/jerome/AS/Softwares/android-studio/emulator/lib64/qt/lib:/media/jerome/AS/Softwares/android-studio/emulator/qemu/linux-x86_64

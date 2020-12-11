@@ -1,0 +1,245 @@
+### bashrc and csh alias file
+
+#if ${use_color} ; then
+## Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
+#	if type -P dircolors >/dev/null ; then
+#		if [[ -f ~/.dir_colors ]] ; then
+#			eval $(dircolors -b ~/.dir_colors)
+#		elif [[ -f /etc/DIR_COLORS ]] ; then
+#			eval $(dircolors -b /etc/DIR_COLORS)
+#		fi
+#	fi
+#
+#	if [[ ${EUID} == 0 ]] ; then
+#		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
+#	alias ls='ls --color=auto'
+#	alias grep='grep --colour=auto'
+#	alias egrep='egrep --colour=auto'
+#	alias fgrep='fgrep --colour=auto'
+#
+#
+#	else
+#		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+#	fi
+#
+#else
+#	if [[ ${EUID} == 0 ]] ; then
+#		# show root@ when we don't have colors
+#		PS1='\u@\h \W \$ '
+#	else
+#		PS1='\u@\h \w \$ '
+#	fi
+#fi
+alias AJ='cd /media/jerome/AJ'
+alias AS='cd /media/jerome/AS'
+alias PS='cd /media/jerome/PS'
+alias VG='cd /media/jerome/VG'
+alias NR='cd /media/jerome/NR'
+alias export_java='export PATH=$PATH:/media/jerome/AS/Softwares/android-studio/android-studio/jre/bin/:/media/jerome/AS/Softwares/android-studio/android-studio/jre/jre/bin/:media/jerome/AS/Softwares/android-studio/android-studio/jre/jre/lib/:/media/jerome/AS/Softwares/android-studio/android-studio/bin/clang/linux'
+alias export_brow='source $HOME/.config/.path'
+alias su='su -l'
+#alias NR=' [[ `mount  | grep /dev/sdb5` > /dev/null ]] && cd /media/jerome/NR/  || sudo mount /dev/sdb5 /media/jerome/NR ; cd /media/jerome/NR/ '
+#alias AJ=' [[ `mount  | grep /dev/sdb1` > /dev/null ]] && cd /media/jerome/AJ/  || sudo mount /dev/sdb1 /media/jerome/AJ ; cd /media/jerome/AJ/ '
+#alias AS=' [[ `mount  | grep /dev/sdb3` > /dev/null ]] && cd /media/jerome/AS/  || sudo mount /dev/sdb3 /media/jerome/AS ; cd /media/jerome/AS/ '
+#alias PS=' [[ `mount  | grep /dev/sdb2` > /dev/null ]] && cd /media/jerome/PS/  || sudo mount /dev/sdb2 /media/jerome/PS ; cd /media/jerome/PS/ '
+#alias BK=' [[ `mount  | grep /dev/sdb4` > /dev/null ]] && cd /media/jerome/BK/  || sudo mount /dev/sdb4 /media/jerome/BK ; cd /media/jerome/BK/ '
+#alias VG=' [[ `mount  | grep /dev/sdb6` > /dev/null ]] && cd /media/jerome/VG/  || sudo mount /dev/sdb6 /media/jerome/VG ; cd /media/jerome/VG/ '
+#alias VG=' [[ `ls /media/jerome/VG/ ` > /dev/null ]] && cd /media/jerome/VG/  || sudo mount /dev/sdb7 /media/jerome/VG -o noexec,nodev,noatime,uid=jerome,rw ; cd /media/jerome/VG/ '
+
+alias um='[[ `mount | grep /dev/sdb` > /dev/null ]] && sudo umount /media/jerome/* '
+
+alias ai='cd /media/jerome/AS/appimage/'
+alias am='alsamixer -D equal '
+alias aptrm='sudo  apt autoremove --purge '
+alias aptS='apt-cache search '
+alias apts='apt search '
+alias chrometor='chromium.sh --proxy-server="socks5://127.0.0.1:9050" ' 
+alias aptv='apt-cache madison '
+alias aptx='sudo   apt install --no-install-recommends --no-install-suggests'
+alias c='cat'
+alias calcurse='firejail calcurse'
+alias ccourse='cd /media/jerome/VG/courses/c'
+alias pcourse='cd /media/jerome/VG/courses/python'
+alias cd..='cd ..'
+alias cfget='wget   -U `random.exe` -np  -qO-  '
+alias sget='firejail --private-etc=fonts,hosts,ssl,ca-certificates /usr/bin/wget   -U `random.exe` -c  '
+
+alias cls='clear'
+alias cmus='firejail --noprofile --noroot --nonewprivs --cpu=0 --net=none cmus'
+alias cocd='cd Documents/onlinecourses/udacity/'
+alias cp='cp -pv'
+alias cuif='firejail --quiet curl ifconfig.co'
+#alias curl='firejail --private="`pwd`" /usr/bin/curl  -c  -H "User-Agent: `random.exe`"  -A `random.exe` '
+alias curl='firejail  /usr/bin/curl   -H "User-Agent: `random.exe`"  -A `random.exe` '
+
+alias curl-time='firejail curl -I '\''https://google.com/'\'' 2>/dev/null | grep -i '\''^date:'\'' | sed '\''s/^[Dd]ate: //g'\'''
+alias df='df -h'
+alias dosbox='firejail --quiet dosbox'
+alias egrep='egrep --colour=auto'
+alias elinks='firejail elinks  -anonymous duckduckgo.com  '
+alias et='exit'
+alias f2='csh $HOME/my\ scripts/f2.sh'
+alias facecam='firejail mpv  -geometry 420x240+1450+800  --demuxer-lavf-format video4linux2 --demuxer-lavf-o-set input_format=mjpeg av://v4l2:/dev/video0 '
+##alias facerecord='ffmpeg -f v4l2 -framerate 25 -video_size 640x480 -i /dev/video0 Facecam-record-$(date +%Y)-$(date +%m)-$(date +%d){$(date +%T)}.mp4'
+alias fc='sudo fc-cache -fv'
+alias ff='csh $HOME/my\ scripts/ff.sh'
+alias ffd='csh $HOME/my\ scripts/ffplay-youtube.sh -nodisp '
+alias ffdl='csh $HOME/my\ scripts/ffdl.sh'
+alias fgrep='fgrep --colour=auto'
+alias firejailx=' firejail   \
+--noprofile --protocol=unix,inet \
+--env=LD_LIBRARY_PATH=none  --hosts-file=/etc/hosts \
+--disable-mnt  \
+--private-cache  --seccomp \
+--read-only=all --noroot --caps.drop=all --shell=none \
+--ipc-namespace --machine-id   \
+--noexec=all --noexec=/tmp --nogroups --nonewprivs --netfilter \
+--blacklist=all --netfilter --netfilter=/etc/firejail/nolocal.net  \
+--private-opt=all --private-etc=nsswitch.conf,hosts,ssl,ca-certificates   \
+--private-tmp --dns=1.1.1.1   $@ '
+alias fp='csh $HOME/my\ scripts/fp.sh'
+alias free='free -mt'
+alias gay='whois '
+alias gogosearch='sh my\ scripts/gogo.sh'
+alias grep='grep --colour=auto'
+alias hexchat='firejail hexchat'
+alias hw='hwinfo --short'
+alias ip2='firejail --private --noroot --nonewprivs  --quiet wget -Ucurl   -qO- ifconfig.co/ip'
+alias ipx='read x; firejail --quiet wget -qO-  "https://ipinfo.io/$x"'
+alias irssi='csh $HOME/my\ scripts/irc.sh'
+#alias aria2c='firejail --private-opt=aria2c  /opt/aria2c/aria2c -x 16 -c  --user-agent="I FUCK UR MOM!! BITCH!!! "  '
+alias jctl='journalctl -p 3 -xb'
+alias kc='killall conky'
+alias l='ls'
+alias l.='ls -A | egrep '\''^\.'\'''
+alias la='ls -a'
+alias livelinux='csh $HOME/my\ scripts/liveqemu.sh '
+alias livelinux2='csh $HOME/my\ scripts/liveqemu2.sh'
+alias ll='ls -la'
+alias ls='ls -a  --color=auto'
+alias lsd='ls -a --color=auto -d */'
+alias lsh='ls --color=auto -sh '
+alias lsofx='sudo sh $HOME/my\ scripts/lsof'
+alias lsx='ls --color=auto -lh '
+alias lt='csh $HOME/my\ scripts/light.sh'
+alias lxv='cd /media/jerome/VG/linux\ video/x/x/'
+alias lynx='firejail /usr/bin/lynx -crawl -dump '
+alias mac='echo wifi; macchanger -s wlan0; echo ethernet; macchanger -s eth0; echo local ; macchanger -s lo'
+alias macx='cd /media/jerome/BK/isos/macx/high-sierra '
+alias merge='xrdb -merge ~/.Xresources'
+alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
+alias mnt='sudo /usr/bin/mnt'
+alias mnt2='sudo /usr/bin/mnt2'
+alias moviessearch='csh scripttest/movies.sh'
+alias mp3='firejail mpv --no-video --geometry 300x100'
+alias mpb='firejail  mpv --ytdl-format=best'
+alias mpdl=' $HOME/my\ scripts/mpdl.sh'
+alias mpv='mpv    \
+--hwdec=nvdec-copy \
+  --video-sync=audio   --vd-lavc-threads=2 --video-sync=audio \
+    $@'
+alias mpv2='firejail mpv --loop-file=200  --geometry 700x400'
+alias mpvs='firejail --private --disable-mnt --nonewprivs --noexec=all mpv '
+alias mpvv='csh $HOME/my\ scripts/mpv.sh '
+alias mpvvx='csh $HOME/my\ scripts/mpv2.sh '
+alias mpvx='csh $HOME/my\ scripts/4ani.sh '
+alias mv='mv -v '
+alias n='nano'
+alias nanob='firejail nanob -i www.duckduckgo.com '
+alias news='csh $HOME/my\ scripts/newsboat.sh'
+alias newsboat='firejail newsboat -r'
+alias newsconf='vim /opt/BROWSING_DATA/newsboat/.newsboat/config'
+alias newsurls='vim /opt/BROWSING_DATA/newsboat/.newsboat/urls'
+alias nicosearch='csh scripttest/nico.sh'
+alias nnn='nnn -H -d'
+alias nsup='bash $HOME/my\ scripts/nslookup.sh'
+alias nv='nvim'
+alias openconf='openbox --reconfigure'
+alias p2='csh $HOME/my\ scripts/p2.sh'
+alias p3='csh $HOME/my\ scripts/p3.sh'
+alias pm='csh $HOME/my\ scripts/pm.sh'
+alias poweroff='sudo poweroff'
+alias ps='ps af'
+alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
+alias pullanime='csh ./scripttest/pullanime.sh '
+alias pullmusic='csh ./my\ scripts/pullmusic.sh'
+alias pycourse='cd /media/jerome/VG/courses/python'
+alias reboot='sudo reboot'
+alias rip='expac --timefmt='\''%Y-%m-%d %T'\'' '\''%l\t%n %v'\'' | sort | tail -100'
+alias rtv='firejail rtv'
+alias sc='/usr/sbin/service --status-all'
+alias scrapy='firejail --quiet scrapy'
+alias sf='csh $HOME/my\ scripts/sf.sh'
+alias sf2='csh $HOME/my\ scripts/sf2.sh'
+alias skel='cp -rf /etc/skel/* ~'
+#alias speedcheck='firejail curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python - '
+alias ssx='ss -natup'
+alias sta='sudo ifup wlan0'
+alias steam='firejail --quiet steam'
+alias stp='sudo ifdown wlan0'
+alias sx='sudo '
+alias torx='export http_proxy=socks5://127.0.0.1:9050 HTTP_PROXY=socks5://127.0.0.1:9050 ; export https_proxy=socks5://127.0.0.1:9050 HTTPS_PROXY=socks5://127.0.0.1:9050'
+alias trizenskip='trizen -S --skipinteg'
+alias uac='csh ~/.bin/main/000*'
+alias uname='uname -a'
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias userlist='cut -d: -f1 /etc/passwd'
+alias v='vim'
+alias vbm='sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Public $HOME/Public'
+alias video='csh $HOME/my\ scripts/videowatch'
+alias virshx='firejail --noprofile --quiet  \
+--env=LD_LIBRARY_PATH=none  --hosts-file=/etc/hosts \
+--private-cache  --seccomp \
+--read-only=all --noroot --caps.drop=all --shell=none \
+--ipc-namespace --machine-id   \
+--noexec=all --noexec=/tmp --nogroups --nonewprivs --netfilter \
+--blacklist=all --netfilter --netfilter=/etc/firejail/nolocal.net  \
+--private-opt=all --private-etc=group,passwd,nsswitch.conf,hosts,ssl,ca-certificates   \
+--private-tmp --dns=80.80.80.80 --dns=1.1.0.1 --dns=2.2.2.2   \
+--private=/opt/BROWSING_DATA/libvirt  virsh'
+alias virt2d='cd /media/jerome/PS/windows/linux/'
+alias virtd=' [[ `mount  | grep /dev/sdb5` > /dev/null ]] && cd /media/jerome/NR/VirtualBox\ VMs/iso\ s/ || sudo mount /dev/sdb5 /media/jerome/NR ;  cd /media/jerome/NR/VirtualBox\ VMs/iso\ s/  '
+alias virtv='cd /media/jerome/NR/VirtualBox\ VMs/'
+alias vm=' csh   $HOME/my\ scripts/qemu.sh '
+alias vm2='/usr/bin/qemu-system-x86_64 -vga vmware -monitor stdio  -enable-kvm --cpu host -smp 8,cores=8 -name subnode --sandbox on  -m 2G   -boot d'
+alias vol='amixer | head -5 |tail -1 |cut -d" " -f6'
+alias wget='/bin/firejail --private="`pwd`" wget -c  -U `random.exe` '
+alias wgeth='csh $HOME/my\ scripts/wgeth.sh'
+alias wgett='firejail wget -c '
+alias wgetx='firejail --private  wget -qO-  -Ucurl  '
+alias workd='csh $HOME/my\ scripts/workdir.sh'
+alias youtube-dl='firejail youtube-dl'
+alias yt='csh $HOME/my\ scripts/playlists.sh'
+alias yt-add='nano .config/.yt-playlist'
+alias yta-aac='youtube-dl --extract-audio --audio-format aac '
+alias ytd-best='youtube-dl --extract-audio --audio-format best '
+alias yta-flac='youtube-dl --extract-audio --audio-format flac '
+alias yta-m4a='youtube-dl --extract-audio --audio-format m4a '
+alias ytd-mp3='youtube-dl --extract-audio --audio-format mp3 '
+alias yta-opus='youtube-dl --extract-audio --audio-format opus '
+alias yta-vorbis='youtube-dl --extract-audio --audio-format vorbis '
+alias ytd-wav='youtube-dl --extract-audio --audio-format wav '
+alias ytd='firejail   youtube-dl  --user-agent `random.exe` \
+ --user-agent=`random.exe` -c '
+alias ytd-playlist='firejail youtube-dl --external-downloader wget  --user-agent=`random.exe` '
+alias ytv-best='youtube-dl -f bestvideo+bestaudio '
+alias yv='bash $HOME/my\ scripts/yt.sh'
+alias tk='x=`hostname -I` ; sudo tcpkill host -9  $x '
+alias aw='an.exe watch'
+alias PATH='cat ~/.config/.path'
+alias findf='find -type f -iname '
+alias findd='find -type d  -iname  '
+alias hgrep='history  | grep -v grep  | /bin/grep -i -e VSZ -e  '
+alias p='pager '
+alias mega-get='firejail --noroot --nonewprivs --noexec=/home --noexec=/media --noexec=/etc --noexec=/sbin  mega-get '
+alias megacmd='firejail --noroot --nonewprivs --noexec=/home --noexec=/media --noexec=/etc --noexec=/sbin  mega-cmd '
+alias jd2='firejail --noroot --nonewprivs --noexec=/home --noexec=/media --noexec=/etc --noexec=/sbin  /opt/jd2/jd2/JDownloader2 '
+alias bv='vim -c ":BinEdit"'
+alias browserdir=' cd /opt/BROWSING_DATA/chromium.1/'
+## virtual machines 
+alias winvm='cd /media/jerome/NR/VirtualBox\ VMs/window/ ;  vm win7.img'
+alias debvm='cd /media/jerome/NR/VirtualBox\ VMs/Debian/ ;  vm deb9.vdi'
+alias rpmvm='cd /media/jerome/NR/VirtualBox\ VMs/Centos/ ;  vm centos.vdi'
+alias macvm='cd /media/jerome/BK/isos/macx/high-sierra ;  vm virtio.vdi'
+alias andl='cd '~/.local/lib/python3.7/site-packages/anime_downloader''
+alias myhelp='less  ~/Desktop/Desktop/linux\ doc/awk\ \&\ sed'

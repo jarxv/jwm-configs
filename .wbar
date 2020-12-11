@@ -1,0 +1,92 @@
+i: /usr/share/pixmaps/wbar/dock.png
+c: wbar --above-desk --nofont --pos bottom --grow --isize 58 --idist 14 --nanim 4 --zoomf 1.200000 --jumpf 1.100000 --balfa 100 --falfa 96
+t: /usr/share/fonts/truetype/liberation/LiberationMono-Regular/13
+
+i: /home/jerome/.config/icons/Apps-preferences-desktop-wallpaper-icon.png
+c: lxappearance 
+t: lxapprience
+
+i: /home/jerome/.config/icons/launchpad-icon.png
+c: /bin/rapidlauncher --gapplication-service     2> /dev/null
+t: rapidlauncher
+
+i: /opt/BROWSING_DATA/surf/icons/facetime-icon.png
+c: aa-exec firejail /usr/bin/hexchat -n
+t: hexchat
+
+i: /opt/google/chrome/product_logo_256.png
+c: sh "/home/$(whoami)/my scripts/gchrome.sh"
+t: chrome
+
+i: /opt/BROWSING_DATA/surf/icons/chromium-browser-icon.png
+c: exec  "/home/$(whoami)/my scripts/chromium.sh"
+t: chromium
+
+i: /usr/share/icons/nuoveXT2/128x128/apps/gthumb.png
+c: gthumb
+t: Image Viewer
+
+i: /usr/share/icons/hicolor/256x256/apps/icecat.png
+c: icecat
+t: icecat
+
+i: /usr/share/icons/hicolor/256x256/apps/thonny.png
+c: thonny
+t: tonny
+
+i: /opt/visualstudio/programfiles/usr/share/pixmaps/com.visualstudio.code.png
+c: sh "/home/$(whoami)/my scripts/vscode.sh"
+t: vscode
+
+i: /opt/BROWSING_DATA/surf/icons/maps-icon.png
+c: sh "/home/$(whoami)/my scripts/pm.sh"
+t: palemoon
+
+i: /opt/BROWSING_DATA/surf/icons/finder-icon.png
+c: pcmanfm
+t: File Manager
+
+i: /usr/share/icons/Adwaita/512x512/apps/utilities-terminal.png
+c: sakura
+t: sakura
+
+i: /opt/BROWSING_DATA/surf/icons/safari-icon.png
+c: /opt/safari/safari 
+t: safari
+
+i: /opt/BROWSING_DATA/surf/icons/preview-icon.png
+c: monodoc
+t: monodoc
+
+i: /opt/discord/share/pixmaps/discord.png
+c: exec "/home/$(whoami)/my scripts/discord.sh"
+t: discord
+
+i: /usr/share/icons/Adwaita/512x512/apps/utilities-system-monitor.png
+c: sakura -e htop 
+t: htop
+
+i: /usr/share/icons/hicolor/48x48/mimetypes/application-x-codeblocks.png
+c: codeblocks
+t: codeblocks
+
+i: /media/jerome/AS/Softwares/android-studio/android-studio/bin/studio.png
+c: /media/jerome/AS/Softwares/android-studio/android-studio/bin/studio.sh
+t: android studio
+
+i: /usr/share/icons/hicolor/256x256/apps/org.gnome.GHex.png
+c: ghex
+t: ghex
+
+i: /usr/share/icons/hicolor/256x256/apps/smtube.png
+c: smtube
+t: smtube
+
+i: /opt/BROWSING_DATA/surf/icons/textedit-icon.png
+c: bless
+t: bless
+
+i: /opt/BROWSING_DATA/surf/icons/Documents-icon.png
+c: fbreader
+t: fbreader
+
